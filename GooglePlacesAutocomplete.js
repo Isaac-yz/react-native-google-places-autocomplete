@@ -816,6 +816,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
               props.suppressDefaultStyles ? {} : defaultStyles.textInput,
               props.styles.textInput,
             ]}
+            editable={isEditable}
             value={stateText}
             placeholder={props.placeholder}
             onFocus={
@@ -899,6 +900,7 @@ GooglePlacesAutocomplete.propTypes = {
   textInputHide: PropTypes.bool,
   textInputProps: PropTypes.object,
   timeout: PropTypes.number,
+  isEditable: PropTypes.bool,
 };
 
 GooglePlacesAutocomplete.defaultProps = {
@@ -942,6 +944,7 @@ GooglePlacesAutocomplete.defaultProps = {
   textInputHide: false,
   textInputProps: {},
   timeout: 20000,
+  isEditable: false,
 };
 
 export default { GooglePlacesAutocomplete };
