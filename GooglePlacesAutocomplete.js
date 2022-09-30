@@ -33,13 +33,16 @@ const defaultStyles = {
   },
   textInput: {
     backgroundColor: '#FFFFFF',
-    height: 44,
+    height: 45,
     borderRadius: 5,
     paddingVertical: 5,
     paddingHorizontal: 10,
     fontSize: 15,
     flex: 1,
     marginBottom: 5,
+  },
+  disableTextInput: {
+    opacity:0.4,
   },
   listView: {},
   row: {
@@ -815,8 +818,9 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
             style={[
               props.suppressDefaultStyles ? {} : defaultStyles.textInput,
               props.styles.textInput,
+              props.isEditable ? {} : defaultStyles.disableTextInput,
             ]}
-            editable={isEditable}
+            editable={props.isEditable}
             value={stateText}
             placeholder={props.placeholder}
             onFocus={
